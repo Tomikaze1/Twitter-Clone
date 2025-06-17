@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Explore</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="Search Twitter..."></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let trend of trends">
+      <ion-label>
+        <h2>{{ trend.title }}</h2>
+        <p>{{ trend.tweets }} Tweets</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

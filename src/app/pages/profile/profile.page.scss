@@ -1,0 +1,28 @@
+ion-content {
+  --background: #000000;
+  color: #000;
+  padding: 16px;
+}
+
+ion-avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px auto;
+  border: 3px solid #1da1f2;
+  border-radius: 50%;
+}
+
+ion-item {
+  --inner-padding-end: 8px;
+  --padding-start: 0;
+  --background: transparent;
+}
+
+ion-label {
+  font-weight: bold;
+  color: #555;
+}
+
+ion-textarea, ion-input {
+  font-size: 16px;
+}

@@ -1,0 +1,61 @@
+ion-content {
+  --background: #000; 
+  color: #000;
+  padding: 8px;
+}
+
+ion-card {
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid #1a1919;
+  margin: 10px 0;
+  background: #000;
+}
+
+ion-item {
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  --background: transparent;
+}
+
+ion-avatar {
+  width: 48px;
+  height: 48px;
+}
+
+ion-label h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+ion-label p {
+  font-size: 14px;
+  margin: 4px 0 8px 0;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  font-size: 14px;
+  color: #1da1f2; 
+}
+
+ion-fab-button {
+  --background: #1da1f2;  
+  --color: white;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+
+ion-fab {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}

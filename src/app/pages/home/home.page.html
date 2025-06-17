@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let tweet of tweets">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://i.pravatar.cc/100?u={{tweet.user}}" />
+      </ion-avatar>
+      <ion-label>
+  <h2>{{tweet.user}}</h2>
+  <p (click)="viewTweet(tweet)">{{tweet.content}}</p>
+  <div class="actions">
+    <ion-button size="small" fill="clear" (click)="likeTweet(tweet)">
+      <ion-icon name="heart-outline"></ion-icon>
+      <ion-label>{{ tweet.likes }}</ion-label>
+    </ion-button>
+    <ion-button size="small" fill="clear" (click)="retweet(tweet)">
+      <ion-icon name="repeat-outline"></ion-icon>
+      <ion-label>{{ tweet.retweets }}</ion-label>
+    </ion-button>
+  </div>
+</ion-label>
+
+    </ion-item>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="openTweetModal()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+<ion-modal [isOpen]="showReplies" (didDismiss)="showReplies = false">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Tweet</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="showReplies = false">Close</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <h2>{{ selectedTweet?.user }}</h2>
+      <p>{{ selectedTweet?.content }}</p>
+
+      <ion-list>
+        <ion-item *ngFor="let reply of selectedTweet?.replies">
+          <ion-label>{{ reply }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

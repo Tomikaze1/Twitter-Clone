@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Compose Tweet</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-textarea
+    placeholder="What's happening?"
+    [(ngModel)]="tweetText"
+    maxlength="280"
+    (ionInput)="updateCharCount()">
+  </ion-textarea>
+
+  <div class="tweet-footer">
+    <span>{{ charCount }}/280</span>
+    <ion-button expand="block" [disabled]="!tweetText" (click)="postTweet()">Tweet</ion-button>
+  </div>
+</ion-content>

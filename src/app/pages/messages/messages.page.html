@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Messages</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let message of messages">
+      <ion-avatar slot="start">
+        <img src="https://i.pravatar.cc/150?u={{message.from}}" />
+      </ion-avatar>
+      <ion-label>
+        <h2>{{ message.from }}</h2>
+        <p>{{ message.text }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
